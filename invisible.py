@@ -1,10 +1,8 @@
 import cv2
 import numpy as np
 import time
-
-# Initialize video capture from the webcam
+# Initialize webcam can be done wuth 0 or 1
 cap = cv2.VideoCapture(0)
-
 # Give the camera time to adjust and capture the background
 time.sleep(2)
 ret, background = cap.read()
@@ -57,10 +55,10 @@ while cap.isOpened():
     # Display the result
     cv2.imshow('Invisible Cloak - Red Cloth', final_output)
 
-    # Exit the loop when 'q' is pressed
+    # Exit when 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# Release the video capture object and close all windows
+# close all windows
 cap.release()
 cv2.destroyAllWindows()
